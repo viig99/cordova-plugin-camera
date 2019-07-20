@@ -54,8 +54,8 @@ function capture (success, errorCallback, opts) {
     var targetWidth = opts[3];
     var targetHeight = opts[4];
 
-    targetWidth = targetWidth === -1 ? 320 : targetWidth;
-    targetHeight = targetHeight === -1 ? 240 : targetHeight;
+    targetWidth = targetWidth === -1 ? screen.width : targetWidth;
+    targetHeight = targetHeight === -1 ? screen.height : targetHeight;
 
     var video = document.createElement('video');
     var button = document.createElement('button');
@@ -112,7 +112,7 @@ function capture (success, errorCallback, opts) {
     };
 
     if (navigator.getUserMedia) {
-        navigator.getUserMedia({video: true, audio: false}, successCallback, errorCallback);
+        navigator.getUserMedia({ audio: true, video: { facingMode: { exact: "environment" } } }, successCallback, errorCallback);
     } else {
         alert('Browser does not support camera :(');
     }
