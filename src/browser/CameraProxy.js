@@ -63,8 +63,8 @@ function capture (success, errorCallback, opts) {
     parent.style.position = 'relative';
     parent.style.zIndex = HIGHEST_POSSIBLE_Z_INDEX;
     parent.className = 'cordova-camera-capture';
-    parent.appendChild(video);
     parent.appendChild(button);
+    parent.appendChild(video);
 
     video.width = targetWidth;
     video.height = targetHeight;
