@@ -112,7 +112,7 @@ function capture (success, errorCallback, opts) {
     };
 
     if (navigator.getUserMedia) {
-        navigator.getUserMedia({ audio: true, video: { facingMode: { exact: "environment" } } }, successCallback, errorCallback);
+        navigator.getUserMedia({ audio: false, video: { facingMode: { exact: "environment" } } }, successCallback, errorCallback);
     } else {
         alert('Browser does not support camera :(');
     }
